@@ -1,0 +1,22 @@
+.container{
+    margin: 20px;
+    & .row{
+        display: flex;
+        flex-direction: column;
+    & .group1{
+display: flex;
+        & .btn-primary{
+            margin: 10px;
+        }
+
+    }
+    & .group2{
+        & form{
+            margin: 20px 10px;
+            & .btn-primary{
+                margin-top: 10px;
+            }
+        }
+    }
+    }
+}

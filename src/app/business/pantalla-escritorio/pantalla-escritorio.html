@@ -1,0 +1,30 @@
+   <div class="container">
+        <div class="card">
+             <h1 class="mt-5" id="deskLbl">{{deskNumber}}</h1>
+    <hr>
+    <div class="row">
+        <div class="col-8">
+            <h4>Atendiendo a <small id="smallT" class="text-primary">{{small}}</small></h4>
+        
+            <button id="btn-draw" class="btn btn-primary mt-5" (click)="getTicket()">
+                Atender siguiente
+            </button>
+
+            <button id="btn-done" class="btn btn-primary mt-5" (click)="finishTicked()">
+                Terminar 
+            </button>
+        </div>
+
+        <div class="col-4 text-center">
+            <h4>En cola</h4>
+            
+            <div #noMoreAlert class="alert alert-info mt-2" id="alert">
+                <span>Ya no hay más tickets</span>
+            </div>
+
+            <h1 id="lbl-pending">{{pending}}</h1>
+        </div>
+    </div>
+
+        </div>
+    </div>
