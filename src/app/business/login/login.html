@@ -1,0 +1,59 @@
+<section id="app-Login" class="app-Login">
+    <article class="secction login">
+        <div class="container">
+
+            <div class="sec-A-Img">
+                <img src="img/LOGO.jpeg" >
+            </div>
+
+            <div class="sec-B-Form">
+                <div class="form-Container">
+
+                    <h1>¡Bienvenido!</h1>
+                    <p>Accede con tus credenciales</p>
+        
+                    <!-- <form #f="ngForm" (ngSubmit)="f.form.valid && login(f)"> -->
+                    <form [formGroup]="credenciales()" autocomplete="off">
+                      
+                        <div class="form-group">
+                            <label for="email">Nombre de usuario</label>
+                             <span class="icon">
+                                <img src="img/icon-avatar.png">
+                             </span>
+                            <input type="email" formControlName="email" class="form-control" id="email" autocomplete="off" name="email" placeholder="Nombre de usuario" (input)="formImputComplete()" (click)="evaluaMssjError()" >
+                        </div>
+                        
+                        <div class="form-group pass">
+                            <label for="password">Contraseña</label>
+                            <span class="icon">
+                                <img src="img/icon-lock.png">
+                             </span>
+                             <input type="password" formControlName="password" #inputPassword class="form-control" id="password" autocomplete="off" name="password" placeholder="Contraseña" (input)="formImputComplete()" (click)="evaluaMssjError()" >
+                             <button class="iconVerPass" (click)="visualizarPassword()">
+                                 <img [src]="visualizarPass ? 'img/icon-eye2.png':'img/icon-eye.png'" >
+                             </button>
+                             
+                        </div>
+
+                        <div class="errorPass" [hidden]="errorPass">
+                            <p><img src="img/x-icon.png"> Nombre o contraseña inválida</p>
+                        </div>
+                        
+                         <button type="submit" [classList]="btnEnviar? 'btn-login inActive':'btn-login Active'" [disabled]="btnEnviar" (click)="login()">Ingresar</button>
+                    </form>
+
+                </div>
+
+                <!-- <p class="vercion">pppp</p> -->
+                <!-- sistema de administracion Financiera -->
+
+            </div>
+        </div>
+    </article>
+</section>
+
+
+
+
+
+

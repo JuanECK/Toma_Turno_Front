@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+}
+:root{
+    /* font-weight tipografias */
+    --Thin:100;
+    --Extra-Light:300;
+    --Light:300;
+    --Normal:400; /* Regular */
+    --Medium:500;
+    --Semi-Bold:600;
+    --Bold:800;
+    --Extra-Bold:900;
+    --Obligatorio:#FF9900 ;
+}
 .card{
     padding: 16px 12px;
     position: relative;
