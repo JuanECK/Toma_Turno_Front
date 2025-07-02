@@ -31,9 +31,9 @@ export class Login implements OnInit {
   )
 
   ngOnInit(): void {
-    if (window.location.pathname === '/login' && localStorage.getItem('sesion')) {
-      this.router.navigate(['/Inicio'])
-    }
+    // if (window.location.pathname === '' || window.location.pathname === '/' || window.location.pathname === '/login' && localStorage.getItem('sesion')) {
+    //   this.router.navigate(['/dashboard'])
+    // }
   }
 
   login(): Promise<boolean> | boolean {
@@ -42,19 +42,19 @@ export class Login implements OnInit {
     const contrasenia = this.credenciales().get('password')?.value;
 
     return this.AuthService.login(usuario, contrasenia).then(valor => {
-      // this.usuarioRetorno = valor.log
+      this.usuarioRetorno = valor.log
       if (this.usuarioRetorno) {
         // console.log("COMPROBAMOS-USUARIO: " + this.usuarioRetorno);
         // const { Clave_Usuario, Usuario, ...UsuarioData } = valor.data.user
         // const { Usuario, ...UsuarioData } = valor.data.user
         // localStorage.setItem('sesion', JSON.stringify(UsuarioData));
-       
-        localStorage.setItem('sesion', JSON.stringify(valor.data.user));
+       console.log(valor.data)
+        localStorage.setItem('sesion', JSON.stringify(valor.data));
 
         // const { Nombre_Completo, ...UsuarioD} = UsuarioData 
         // this.emitDataLogin.disparadorLogin.emit(UsuarioD)
 
-        this.router.navigate(['/']);
+        this.router.navigate(['']);
         return true;
       } else {
         // console.log("Redirigimosssss: ");

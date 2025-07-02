@@ -155,7 +155,8 @@
 
 .form-Container>form>.errorPass>p {
     position: relative;
-    color: #ee7070;
+    color: #C23342;
+    /* color: #ee7070; */
     font-size: 14px;
     font-weight: var(--Medium);
     margin-left: 10px;

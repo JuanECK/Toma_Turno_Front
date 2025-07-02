@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { WebSocketServiceTs } from '../../core/service/web-socket.service.ts';
 import { Subscription } from 'rxjs';
+import { AuthService } from '../../core/service/authService.service.js';
 
 @Component({
     selector: 'app-pantalla-escritorio',
@@ -11,7 +12,10 @@ import { Subscription } from 'rxjs';
 })
 export class PantallaEscritorio implements OnInit {
 
-    constructor(private webSocketService: WebSocketServiceTs) { }
+    constructor(
+        private webSocketService: WebSocketServiceTs,
+          private authService:AuthService,
+    ) { }
     private messageSubscription!: Subscription;
 
     lblPending = document.getElementById('lbl-pending')
@@ -107,6 +111,10 @@ export class PantallaEscritorio implements OnInit {
             this.workingTicket = null;
             this.small = 'Nadie'
         }
+    }
+
+    logOut(){
+        this.authService.logOut();
     }
 
 
