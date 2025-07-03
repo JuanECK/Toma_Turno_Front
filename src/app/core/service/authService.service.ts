@@ -208,7 +208,7 @@ export class AuthService {
     if (sesion !== null) {
       // console.log('1')
       let Data = JSON.parse(sesion)
-        switch (roles[0]) {
+        switch (Data.perfil) {
             case 1:
               // this.router.navigateByUrl('desk/:id');
               respuestaModulo = true

@@ -14,7 +14,7 @@ export const genericGuard: CanActivateFn = (route, state): MaybeAsync<GuardResul
     if(perfilRetorno) { 
       return true; 
     } 
-      return false; 
+      return router.createUrlTree(['']);; 
     //   return router.createUrlTree(['desk/:id']); 
 });
 
