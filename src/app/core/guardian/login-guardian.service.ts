@@ -15,9 +15,9 @@ export class LoginGuardianService implements CanActivate {
      private valorRetorno: boolean =false;
 
     canActivate(): Promise<boolean> | boolean {
-        return this.authService.isAuthenticado().then(response => {
-            this.valorRetorno = response;
+        return this.authService.isAuthenticado('').then(response => {
             console.log(response)
+            this.valorRetorno = response;
             if(this.valorRetorno){
                 // this.router.navigateByUrl('/dashboard');
                 // console.log('No logueado')
@@ -27,7 +27,7 @@ export class LoginGuardianService implements CanActivate {
             else{
                 // console.log('logueado')
                 //redimencionar a las distintas pantallas dependiendo del perfil logeado
-                this.router.navigate(['']);
+                // this.router.navigate(['']);
                 ///
                 return false
             }

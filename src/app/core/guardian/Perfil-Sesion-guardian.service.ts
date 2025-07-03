@@ -15,11 +15,12 @@ export class PerfilSesionGuardianService implements CanActivate {
     //  private valorRetorno:any;
 
     canActivate(): Promise<boolean> | boolean {
-        return this.authService.isSesionActive().then(response => {
-            let valorRetorno = JSON.parse(response.sesion);
-            console.log(JSON.parse(response.sesion))
+        return this.authService.isAuthenticado('e').then(response => {
+            let valorRetorno = response;
+            // console.log(JSON.parse(response.sesion))
             // revisar el inicio de sesion porque no trae los dartos de la session
-            if(valorRetorno.perfil == 1){
+            if(valorRetorno){
+            // if(valorRetorno.perfil == 1){
                 //redimensionar a la pantalla de admin
                 console.log('Administrador')
                 return true;
@@ -27,13 +28,33 @@ export class PerfilSesionGuardianService implements CanActivate {
             else{
                 console.log('Usuario Random')
                 //redimencionar a las distintas pantallas dependiendo del perfil logeado
-                this.router.navigateByUrl('desk/:id');
+                // this.router.navigateByUrl('desk/:id');
 
                 ///
                 return false
             }
         })
     }
+    // canActivate(): Promise<boolean> | boolean {
+    //     return this.authService.isSesionActive().then(response => {
+    //         let valorRetorno = JSON.parse(response.sesion);
+    //         console.log(JSON.parse(response.sesion))
+    //         // revisar el inicio de sesion porque no trae los dartos de la session
+    //         if(valorRetorno.perfil == 1){
+    //             //redimensionar a la pantalla de admin
+    //             console.log('Administrador')
+    //             return true;
+    //         }
+    //         else{
+    //             console.log('Usuario Random')
+    //             //redimencionar a las distintas pantallas dependiendo del perfil logeado
+    //             this.router.navigateByUrl('desk/:id');
+
+    //             ///
+    //             return false
+    //         }
+    //     })
+    // }
 
     // canActivate(): Promise<boolean> | boolean {
     //     return this.authService.isSesionActive().then(response => {

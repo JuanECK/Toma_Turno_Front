@@ -95,8 +95,9 @@ export class AuthService {
   }
 
 
-  async isAuthenticado() {
-    let dataCookie: boolean = true
+  async isAuthenticado( roles: any ) {
+    // let dataCookie: boolean = false
+     let dataCookie: any
 
     //     const response = await fetch(this._http + 'auth/cookie', {
     //   method: 'POST',
@@ -117,15 +118,24 @@ export class AuthService {
     //   dataCookie = false
     //   this.logOut();
     // }
+
+    let arr = [{id:1,r:'admin'},{id:2,r:'desk/:id'},{id:3,r:'public'},{id:4,r:'tickets'}]
+
     const sesion = localStorage.getItem('sesion');
-    console.log(sesion)
     if (sesion !== null) {
-      console.log('1')
-      dataCookie = false
-    } else {
-      console.log('2')
-      dataCookie = true
+      let Data = JSON.parse(sesion)
+      // console.log(arr)
+      let oldLink = arr.filter(old => Data.perfil == old.id)
+
+      if(Data.perfil == roles[0]){
+        console.log( Data.perfil, '-', oldLink[0].r)
+        dataCookie = { dataCookie: true, sesion: oldLink[0].r }
+      }else{
+        dataCookie = { dataCookie: false, sesion: oldLink[0].r }
+      }
     }
+
+
     return dataCookie
   }
 
@@ -152,16 +162,56 @@ export class AuthService {
     //   dataCookie = false
     //   this.logOut();
     // }
+
+
     const sesion = localStorage.getItem('sesion');
     // console.log(sesion)
     if (sesion == null) {
-      console.log('1')
+      console.log('deslogueado')
       dataCookie = { dataCookie: false, sesion: sesion }
     } else {
-      console.log('2')
+      console.log('logueado')
       dataCookie = { dataCookie: true, sesion: sesion }
     }
-    return dataCookie
+    // return dataCookie
+
+
+
+
+
+    //    const sesion = localStorage.getItem('sesion');
+    // if (sesion !== null) {
+    //   // console.log('1')
+    //   let Data = JSON.parse(sesion)
+    //     switch (Data.perfil) {
+    //         case 1:
+    //           // this.router.navigateByUrl('desk/:id');
+    //           dataCookie = { dataCookie: true, sesion: Data }
+    //           console.log('acceso admin')
+    //           break
+    //           case 3:
+    //           console.log('acceso pantalla')
+    //           dataCookie = { dataCookie: true, sesion: Data }
+              
+    //           break
+    //           case 4:
+    //           console.log('acceso tiket')
+    //           dataCookie = { dataCookie: true, sesion: Data }
+              
+    //           break
+              
+    //           default:
+    //           console.log('acceso desk')
+    //            dataCookie = { dataCookie: false, sesion: Data }
+    //         break
+    //     }
+    //     // dataCookie = { dataCookie: false, sesion: sesion }
+    //   }else {
+    //   // console.log('2')
+    //   dataCookie = { dataCookie: false, sesion: sesion }
+    // }
+
+      return dataCookie
   }
 
   async logOut() {
