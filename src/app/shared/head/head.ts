@@ -13,7 +13,7 @@ constructor(
 ){}
 
 logOut(){
-  this.authService.logOut();
+  // this.authService.logOut();
 }
 
 }
