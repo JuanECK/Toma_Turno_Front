@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../core/service/authService.service';
 
 @Component({
   selector: 'app-pantalla-tickets',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './pantalla-tickets.css'
 })
 export class PantallaTickets implements OnInit{
+
+      constructor(
+            private authService:AuthService,
+      ) { }
 
 currentTicket:string = 'Cargando...'
 
@@ -37,6 +42,10 @@ async createTicket() {
 
     this.currentTicket = newTicket.number;
 }
+
+    logOut(){
+        this.authService.logOut();
+    }
 
 
 }

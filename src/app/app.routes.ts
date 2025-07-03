@@ -8,6 +8,7 @@ import { LoginGuardianService } from './core/guardian/login-guardian.service';
 import { SesionGuardianService } from './core/guardian/sesion-guardian.service';
 import { Layout } from './shared/layout/layout';
 import { PerfilSesionGuardianService } from './core/guardian/Perfil-Sesion-guardian.service';
+import { genericGuard } from './core/guardian/Generic-guardian.guard';
 
 export const routes: Routes = [
     
@@ -19,10 +20,10 @@ export const routes: Routes = [
         children:[
             { path:'', redirectTo: 'admin', pathMatch: 'full' },
             // { path:'admin', component:Inicio,},
-            { path:'admin', component:Inicio, canActivate:[PerfilSesionGuardianService]},
-            { path:'desk/:id', component:PantallaEscritorio },
-            { path:'public', component:PantallaPublica },
-            { path:'tickets', component:PantallaTickets },
+            { path:'admin', component:Inicio, canActivate:[PerfilSesionGuardianService,genericGuard],data:{roles:[1]}},
+            { path:'desk/:id', component:PantallaEscritorio},
+            { path:'public', component:PantallaPublica, canActivate: [genericGuard], data:{roles:[3]}},
+            { path:'tickets', component:PantallaTickets, canActivate: [genericGuard], data:{roles:[4]}},
         ]
     },
     // { path:'', redirectTo: 'login', pathMatch: 'full' },

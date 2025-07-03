@@ -19,7 +19,7 @@ export class SesionGuardianService implements CanActivate {
             this.valorRetorno = response.dataCookie;
             console.log(response.dataCookie)
             if(this.valorRetorno){
-                console.log('logueado')
+                // console.log('logueado')
                 // switch (response.sesion) {
                 //     case: 1
                 // }
@@ -29,7 +29,7 @@ export class SesionGuardianService implements CanActivate {
                 //redimensionar al login si no existe logueo
             }
             else{
-                console.log('No logueado')
+                // console.log('No logueado')
                 //redimencionar a las distintas pantallas dependiendo del perfil logeado
                 this.router.navigateByUrl('/login');
                 ///

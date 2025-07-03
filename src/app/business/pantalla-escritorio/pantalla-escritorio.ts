@@ -37,22 +37,22 @@ export class PantallaEscritorio implements OnInit {
 
     ngOnInit(): void {
         //    this.connectToWebSockets()
-        this.loadInitialCount()
+        // this.loadInitialCount()
 
-        this.webSocketService.connect('ws://localhost:3200/ws');
+        // this.webSocketService.connect('ws://localhost:3200/ws');
 
-        this.messageSubscription = this.webSocketService.messages$.subscribe(
-            (message) => {
-                // this.receivedMessages.push(message);
-                // console.log('Message received in component:', message);
-                const { type, payload } = JSON.parse(message)
-                if (type !== 'on-ticket-count-changed') return
-                this.checkTicketCount(payload)
-            },
-            (error) => {
-                console.error('Error receiving message:', error);
-            }
-        );
+        // this.messageSubscription = this.webSocketService.messages$.subscribe(
+        //     (message) => {
+        //         // this.receivedMessages.push(message);
+        //         // console.log('Message received in component:', message);
+        //         const { type, payload } = JSON.parse(message)
+        //         if (type !== 'on-ticket-count-changed') return
+        //         this.checkTicketCount(payload)
+        //     },
+        //     (error) => {
+        //         console.error('Error receiving message:', error);
+        //     }
+        // );
     }
 
     checkTicketCount(currentCount = 0) {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../core/service/authService.service';
 
 @Component({
   selector: 'app-pantalla-publica',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './pantalla-publica.css'
 })
 export class PantallaPublica implements OnInit {
+
+    constructor(
+        private authService:AuthService,
+    ){}
 
 
   ngOnInit(): void {
@@ -74,5 +79,8 @@ connectToWebSockets() {
     };
     
 }
+ logOut(){
+        this.authService.logOut();
+    }
 
 }

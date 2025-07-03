@@ -20,12 +20,12 @@ export class LoginGuardianService implements CanActivate {
             console.log(response)
             if(this.valorRetorno){
                 // this.router.navigateByUrl('/dashboard');
-                console.log('No logueado')
+                // console.log('No logueado')
                 return true;
                 //redimensionar al login si no existe logueo
             }
             else{
-                console.log('logueado')
+                // console.log('logueado')
                 //redimencionar a las distintas pantallas dependiendo del perfil logeado
                 this.router.navigate(['']);
                 ///
