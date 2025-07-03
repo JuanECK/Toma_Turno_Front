@@ -11,7 +11,7 @@ export const perfilGuard: CanActivateFn = (route, state): MaybeAsync<GuardResult
 
   return inject(AuthService).isAuthenticado(roles).then(valor =>{
     perfilRetorno = valor.dataCookie;
-    console.log(valor.sesion)
+    // console.log(valor.sesion)
     if(perfilRetorno) { 
       return true; 
     } 

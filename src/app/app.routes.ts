@@ -15,33 +15,18 @@ export const routes: Routes = [
     
 
     { path:'login', component:Login},
-    // { path:'login', component:Login, canActivate:[LoginGuardianService]},
-    
     
     { path:'', component:Layout, canActivate:[SesionGuardianService],
         children:[
             { path:'', redirectTo: 'admin', pathMatch: 'full' },
-            // { path:'admin', component:Inicio,},
             { path:'admin', component:Inicio, canActivate:[perfilGuard],data:{roles:[1]}},
             { path:'desk/:id', component:PantallaEscritorio, canActivate:[perfilGuard],data:{roles:[2]}},
-            { path:'public', component:PantallaPublica, canActivate: [perfilGuard], data:{roles:[3]}},
-            { path:'tickets', component:PantallaTickets, canActivate: [perfilGuard], data:{roles:[4]}},
+            // { path:'public', component:PantallaPublica, canActivate: [perfilGuard], data:{roles:[3]}},
+            // { path:'tickets', component:PantallaTickets, canActivate: [perfilGuard], data:{roles:[4]}},
         ]
     },
+    { path:'public', component:PantallaPublica, canActivate: [perfilGuard], data:{roles:[3]}},
+    { path:'tickets', component:PantallaTickets, canActivate: [perfilGuard], data:{roles:[4]}},
 
-    // { path:'login', component:Login},
-    // // { path:'login', component:Login, canActivate:[LoginGuardianService]},
-    
-    
-    // { path:'', component:Layout, canActivate:[SesionGuardianService],
-    //     children:[
-    //         { path:'', redirectTo: 'admin', pathMatch: 'full' },
-    //         // { path:'admin', component:Inicio,},
-    //         { path:'admin', component:Inicio, canActivate:[PerfilSesionGuardianService],data:{roles:[1]}},
-    //         { path:'desk/:id', component:PantallaEscritorio},
-    //         { path:'public', component:PantallaPublica, canActivate: [genericGuard], data:{roles:[3]}},
-    //         { path:'tickets', component:PantallaTickets, canActivate: [genericGuard], data:{roles:[4]}},
-    //     ]
-    // },
 
 ];

@@ -4,6 +4,10 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background: #f3f3f3;
+
+}
 :root{
     /* font-weight tipografias */
     --Thin:100;
@@ -16,10 +20,15 @@
     --Extra-Bold:900;
     --Obligatorio:#FF9900 ;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 .card{
+    
     padding: 16px 12px;
     position: relative;
-    background: #838383;
+    top: 98px;
+    background: #ffffff;
     border: none;
     z-index: 100;
     border-radius: 2px;
