@@ -4,17 +4,47 @@
     </div>
     <div class="options">
         <div>
-            <h3>option1</h3>
+            <a>option1</a>
         </div>
         <div>
-            <h3>option1</h3>
+            <a>option1</a>
         </div>
         <div>
-            <h3>option1</h3>
+            <a>option1</a>
         </div>
         <div class="perfilUsuario">
-            <!-- start nav -->
-        <nav id="menu">
+            <div class="imgPerfil">
+                <img src="img/user_img.jpg" alt="">
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn" (click)="dropdown()"><div>Juan Guadalupe Gonzalez soto</div> <img src="img/chebrown-blanco.png" alt=""></button>
+                <div class="dropdown-content" #drop>
+                    <!-- <a href="#">Enlace 1</a>
+                    <a href="#">Enlace 2</a>
+                    <a href="#">Enlace 3</a> -->
+                    <div class="exit">
+                        <button > <span>Mi Perfil</span></button>
+                    </div>
+                    <div class="exit">
+                        <button > <span>Ajustes</span></button>
+                    </div>
+                    <div class="exit">
+                        <button (click)="logOut()"> <span>Finalizar la sesion</span> <img src="img/exit.png" alt=""></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div> -->
+
+            <!-- <nav id="menu">
             <ul>
                 <li><a href="#">Enlace 2</a>
                     <ul>
@@ -24,12 +54,11 @@
                     </ul>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
 
-            <div class="exit">
-                <!-- <img src="img/blanco.png" alt=""> -->
+            <!-- <div class="exit">
                 <button (click)="logOut()"><img src="img/blanco.png" alt=""> <span>Salir</span> </button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
