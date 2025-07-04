@@ -1,4 +1,13 @@
-.container{
+.hide {
+    display: none;
+    color: #ddd;
+}
+
+.hide- {
+    color: #ddd;
+}
+
+.container {
     margin: 0px 30px;
     width: 100%;
     /* height: 70px; */
@@ -9,7 +18,7 @@
     grid-template-areas: "logo options";
 }
 
-.logo{
+.logo {
     grid-area: logo;
     position: absolute;
     margin: 5px 0 5px 10px;
@@ -19,175 +28,154 @@
     justify-content: left;
     align-items: center;
 }
-.logo > img{
+
+.logo>img {
     width: 100%;
     border-radius: 10%;
 }
-.options{
+
+.options {
     grid-area: options;
     display: flex;
     justify-content: right;
     align-items: center;
 }
-.options > div{
+
+.options>.pot {
     margin: 0 2%;
-    display: flex;
+    /* display: flex; */
     justify-content: space-around;
 }
 
-.options > .perfilUsuario{
+.options>.perfilUsuario {
     background: #5a6361;
     margin: 0;
     width: 200px;
     height: 70px;
+    margin-left: 3%;
+    display: flex;
+    justify-content: space-around;
 
 }
-/* .options > .perfilUsuario > ul {
-    list-style:none;
-    margin:0;
-    padding:0;
-}
-.options > .perfilUsuario > ul > li{
-    background-color:#2e518b;
-}
-.options > .perfilUsuario > ul li {
- position:relative;
- float:left;
- margin:0;
- padding:0;
+
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.options > .perfilUsuario > ul li:hover {
- background:#5b78a7;
-} */
-/* ------------------------------------------------- */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
+.dropdown-content>div {
+    height: 30px;
+    padding: 2px 6px;
+    /* padding: 12px 16px; */
+    text-decoration: none;
+    display: block;
+}
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
+.dropdown-content>div>button {
+    width: 100%;
+    height: 100%;
+    margin-left: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-    .dropdown-content > div {
-      height: 30px;
-      padding: 2px 6px;
-      /* padding: 12px 16px; */
-      text-decoration: none;
-      display: block;
+    & img {
+        width: 20px;
+        margin-right: 7px;
     }
+}
 
-    .dropdown-content > div > button {
-        width: 100%;
-       height: 100%;
-       margin-left: 10px;
-       background: none;
-       border: none;
-       cursor: pointer;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        & img{
-            /* margin-bottom: 3px; */
-            width: 20px;
-            margin-left: 7px;
-        }
-    }
 
-    
-    .dropdown-content div:hover {background-color: #ddd;}
-    
-    /*.dropdown .dropdown-content { position: absolute; right: 0px; display: block;} /*Opcional: desplegar al pasar el ratón */
-    .dropdown:hover .dropdown-content {position: absolute; right: 0px; display: block;} /*Opcional: desplegar al pasar el ratón */
-    
-    .dropbtn {
-        background: #013b7e;
-        /* background-color: #4CAF50; */
-        width: 130px;
-        height: 70px;
-        color: white;
-        /* padding: 16px; */
-        font-size: 12px;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .dropbtn > img {
-        width: 10px;
-        margin: 0 10px 0 0;
-    }
-    .dropbtn:hover, .dropbtn:focus {
-        /* background-color: #3e8e41; */
-    }
+.dropdown-content div:hover {
+    background-color: #ddd;
+}
 
-    .mostrar{
-        display: block;
-    }
+/*.dropdown .dropdown-content { position: absolute; right: 0px; display: block;} /*Opcional: desplegar al pasar el ratón */
+.dropdown:hover .dropdown-content {
+    position: absolute;
+    right: 0px;
+    display: block;
+}
 
-/* ------------------------------------------------- */
+/*Opcional: desplegar al pasar el ratón */
 
-.imgPerfil{
+.dropbtn {
+    background: #013b7e;
+    width: 130px;
+    height: 70px;
+    color: white;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.dropbtn>img {
+    width: 10px;
+    margin: 0 10px 0 10px;
+}
+
+.dropbtn>div {
+    max-width: 100%;
+    min-width: 50%;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    /* background-color: #3e8e41; */
+}
+
+.mostrar {
+    display: block;
+}
+
+
+.imgPerfil {
     width: 70px;
     background: #013b7e;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    & img{
-        
+    & img {
+
         width: 80%;
         border-radius: 50%;
     }
 }
 
-/* .options > div > .exit{
-    & button{
-        width: auto;
-        background: none;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-
-        & img{
-            margin-bottom: 3px;
-            width: 20px;
-        }
-        & span{
-            color: rgb(255, 255, 255);
-        }
-    }
-} */
-
-.options > div > a {
+.options>div>a {
     color: #ffffff;
-    display:inline-block;  
+    display: inline-block;
     cursor: pointer;
     font-size: 14px;
 }
 
-.options > div > a::after,
-.options > div > .exit::after{
-  display:block;
-  content: '';
-  border-bottom: solid 1px #ffffff;  
-  transform: scaleX(0);  
-  transition: transform 250ms ease-in-out;
+.options>div>a::after,
+.options>div>.exit::after {
+    display: block;
+    content: '';
+    border-bottom: solid 1px #ffffff;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
 }
-.options > div > a:hover:after,
-.options > div > .exit:hover:after{
+
+.options>div>a:hover:after,
+.options>div>.exit:hover:after {
     transform: scaleX(1);
     /* border-bottom: 1px solid #fff; */
     /* transition: all 2s both; */

@@ -1,12 +1,16 @@
 .Active {
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     /* background-color: #FFBF00; */
-    color: #000;
+    background-color: #c92333;
+    color: #d8d8d8;
+    letter-spacing: 1px;
 }
 
 .inActive {
-    background-color: #919191;
-    color: #cacaca;
+    background-color: #041f3f;
+    /* background-color: #993b44; */
+    /* background-color: #919191; */
+    color: #999999;
 }
 
 /* #013C7E color Azul plataforma */
@@ -128,16 +132,16 @@
 .form-Container>form>.form-group>.icon {
     position: absolute;
     display: block;
-    bottom: .5rem;
-    left: 1rem;
+    bottom: .4rem;
+    left: .8rem;
 
 }
 
 .form-Container>form>.form-group>.iconVerPass {
     position: absolute;
     display: block;
-    bottom: .5rem;
-    right: 0.6rem;
+    bottom: .4rem;
+    right: .8rem;
     cursor: pointer;
     border: none;
     background: none;
@@ -155,7 +159,8 @@
 
 .form-Container>form>.errorPass>p {
     position: relative;
-    color: #C23342;
+    color: #eb4152;
+    letter-spacing: .75px;
     /* color: #ee7070; */
     font-size: 14px;
     font-weight: var(--Medium);
@@ -177,7 +182,7 @@
     height: 30px;
     margin-top: 130px;
     border: none;
-    border-radius: 20px;
+    border-radius: 6px;
     font-size: 14px;
     cursor: pointer;
     font-weight: var(--Medium);

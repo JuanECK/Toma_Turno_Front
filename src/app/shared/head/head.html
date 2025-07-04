@@ -2,15 +2,21 @@
     <div class="logo ">
         <img src="img/LOGO.jpeg">
     </div>
+    <!-- <div [hidden]="editar ? true:false" >
+        <a>option1</a>
+    </div>
+    <div [classList]="editar == true ? 'hide':''" >
+        <a>option1</a>
+    </div> -->
     <div class="options">
-        <div>
+        <div class="pot " [hidden]="editar ? true:false">
             <a>option1</a>
         </div>
-        <div>
-            <a>option1</a>
+        <div class="pot " [hidden]="editar ? true:false">
+            <a>option2</a>
         </div>
-        <div>
-            <a>option1</a>
+        <div class="pot" >
+            <a >option3</a>
         </div>
         <div class="perfilUsuario">
             <div class="imgPerfil">
@@ -18,7 +24,7 @@
             </div>
 
             <div class="dropdown">
-                <button class="dropbtn" (click)="dropdown()"><div>Juan Guadalupe Gonzalez soto</div> <img src="img/chebrown-blanco.png" alt=""></button>
+                <button class="dropbtn" (click)="dropdown()"><div>{{dataHead}}</div> <img src="img/chebrown-blanco.png" alt=""></button>
                 <div class="dropdown-content" #drop>
                     <!-- <a href="#">Enlace 1</a>
                     <a href="#">Enlace 2</a>
@@ -30,35 +36,10 @@
                         <button > <span>Ajustes</span></button>
                     </div>
                     <div class="exit">
-                        <button (click)="logOut()"> <span>Finalizar la sesion</span> <img src="img/exit.png" alt=""></button>
+                        <button (click)="logOut()"> <img src="img/exit.png" alt=""><span>Finalizar la sesion</span> </button>
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div> -->
-
-            <!-- <nav id="menu">
-            <ul>
-                <li><a href="#">Enlace 2</a>
-                    <ul>
-                        <li><a href="#">Enlace 2.1</a></li>
-                        <li><a href="#">Enlace 2.2</a></li>
-                        <li><a href="#">Enlace 2.3</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav> -->
-
-            <!-- <div class="exit">
-                <button (click)="logOut()"><img src="img/blanco.png" alt=""> <span>Salir</span> </button>
-            </div> -->
         </div>
     </div>
 </div>

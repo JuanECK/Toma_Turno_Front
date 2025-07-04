@@ -16,7 +16,7 @@ export class SesionGuardianService implements CanActivate {
 
     canActivate(): Promise<boolean> | boolean {
         return this.authService.isSesionActive().then(response => {
-            console.log(response.dataCookie)
+            // console.log(response.dataCookie)
             this.valorRetorno = response.dataCookie;
             if(this.valorRetorno){
                 // console.log('logueado')

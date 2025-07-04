@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { PuenteDataService } from "./puente-data.service";
 
 interface perfilCajero {
   nombreCajero: string,
@@ -16,6 +17,7 @@ interface perfilCajero {
 export class AuthService {
 
   constructor(
+    private puenteData: PuenteDataService,
     private router: Router
   ) {
 
@@ -74,12 +76,13 @@ export class AuthService {
 
       // console.log(perfil)
       if (email == perfil[0].email && password == perfil[0].password) {
-        // if(email == 'juan@prueba' && password == '123'){
+          // this.setDataLogin(perfil)
         return {
           log: true,
           data: { user: email, perfil: perfil[0].perfil, nombre: perfil[0].nombreCajero }
         }
       }
+
 
       return {
         log: false,
@@ -94,6 +97,10 @@ export class AuthService {
 
   }
 
+  setDataLogin(data:any) {
+    this.puenteData.disparadorData.emit({ perfil: data[0].perfil, nombre: data[0].nombreCajero })
+    // this.formulario().patchValue({INE:'prueba 11111'}) ;
+  }
 
   async isAuthenticado( roles: any ) {
     // let dataCookie: boolean = false
@@ -128,7 +135,7 @@ export class AuthService {
       let oldLink = arr.filter(old => Data.perfil == old.id)
 
       if(Data.perfil == roles[0]){
-        console.log( Data.perfil, '-', oldLink[0].r)
+        // console.log( Data.perfil, '-', oldLink[0].r)
         dataCookie = { dataCookie: true, sesion: oldLink[0].r }
       }else{
         dataCookie = { dataCookie: false, sesion: oldLink[0].r }
@@ -167,10 +174,10 @@ export class AuthService {
     const sesion = localStorage.getItem('sesion');
     // console.log(sesion)
     if (sesion == null) {
-      console.log('deslogueado')
+      // console.log('deslogueado')
       dataCookie = { dataCookie: false, sesion: sesion }
     } else {
-      console.log('logueado')
+      // console.log('logueado')
       dataCookie = { dataCookie: true, sesion: sesion }
     }
     // return dataCookie
@@ -262,21 +269,21 @@ export class AuthService {
             case 1:
               // this.router.navigateByUrl('desk/:id');
               respuestaModulo = true
-              console.log('acceso admin')
+              // console.log('acceso admin')
               break
               case 3:
-              console.log('acceso pantalla')
+              // console.log('acceso pantalla')
               respuestaModulo = true
               
               break
               case 4:
-              console.log('acceso tiket')
+              // console.log('acceso tiket')
               respuestaModulo = true
               
               break
               
               default:
-              console.log('acceso fuera')
+              // console.log('acceso fuera')
               respuestaModulo = false
             break
         }

@@ -49,7 +49,7 @@ export class Login implements OnInit {
         // const { Clave_Usuario, Usuario, ...UsuarioData } = valor.data.user
         // const { Usuario, ...UsuarioData } = valor.data.user
         // localStorage.setItem('sesion', JSON.stringify(UsuarioData));
-       console.log(valor.data)
+      //  console.log(valor.data)
         localStorage.setItem('sesion', JSON.stringify(valor.data));
 
         // const { Nombre_Completo, ...UsuarioD} = UsuarioData 
