@@ -8,6 +8,7 @@ interface perfilCajero {
   password: string,
   idCajero: number,
   perfil: number,
+  caja:number,
 }
 
 @Injectable({
@@ -29,11 +30,11 @@ export class AuthService {
   // perfil:4 = Ticketero
 
   perfiles: perfilCajero[] = [
-    { nombreCajero: 'Juan Soto', email: 'juan@tornillo', password: '123', idCajero: 1, perfil: 1 },
-    { nombreCajero: 'Jorge Alvarez', email: 'jorge@tornillo', password: '123', idCajero: 2, perfil: 2 },
-    { nombreCajero: 'Pedro Paramo', email: 'pedro@tornillo', password: '123', idCajero: 3, perfil: 2 },
-    { nombreCajero: 'pantalla', email: 'pantalla@tornillo', password: '123', idCajero: 4, perfil: 3 },
-    { nombreCajero: 'ticketero', email: 'ticketero@tornillo', password: '123', idCajero: 5, perfil: 4 },
+    { nombreCajero: 'Juan Soto', email: 'juan@tornillo', password: '123', idCajero: 1, perfil: 1, caja:0 },
+    { nombreCajero: 'Jorge Alvarez', email: 'jorge@tornillo', password: '123', idCajero: 2, perfil: 2, caja:1 },
+    { nombreCajero: 'Pedro Paramo', email: 'pedro@tornillo', password: '123', idCajero: 3, perfil: 2, caja:2 },
+    { nombreCajero: 'pantalla', email: 'pantalla@tornillo', password: '123', idCajero: 4, perfil: 3, caja:0 },
+    { nombreCajero: 'ticketero', email: 'ticketero@tornillo', password: '123', idCajero: 5, perfil: 4, caja:0 },
   ]
 
 
@@ -79,7 +80,7 @@ export class AuthService {
           // this.setDataLogin(perfil)
         return {
           log: true,
-          data: { user: email, perfil: perfil[0].perfil, nombre: perfil[0].nombreCajero }
+          data: { user: email, perfil: perfil[0].perfil, nombre: perfil[0].nombreCajero, caja: perfil[0].caja }
         }
       }
 

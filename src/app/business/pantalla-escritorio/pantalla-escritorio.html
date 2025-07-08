@@ -1,13 +1,13 @@
    <div class="container">
         <div class="card">
-             <h1 class="mt-5" id="deskLbl">{{deskNumber}}</h1>
+             <h1 class="mt-5 numberDesk" id="deskLbl">{{deskNumber}}</h1>
     <hr>
-    <div class="row">
+    <div class="row justyfy-between">
         <div class="col-8">
-            <h4>Atendiendo a <small id="smallT" class="text-primary">{{small}}</small></h4>
+            <h4 class="ticketNum">Atendiendo ticket <span>: {{small}}</span></h4>
         
-            <button id="btn-draw" class="btn btn-primary mt-5" (click)="getTicket()">
-                Atender siguiente
+            <button id="btn-draw" class="btn btn-primary btn-class " (click)="getTicket()">
+                Siguiente Ticket
             </button>
 
             <button id="btn-done" class="btn btn-primary mt-5" (click)="finishTicked()">
@@ -15,18 +15,18 @@
             </button>
         </div>
 
-        <div class="col-4 text-center">
-            <h4>En cola</h4>
+        <div class="text-center">
+            <h4>Tikets por atender</h4>
             
-            <div #noMoreAlert class="alert alert-info mt-2" id="alert">
-                <span>Ya no hay más tickets</span>
+            <div #noMoreAlert class="TicketsFaltantes mt-2" id="alert">
+                <span>Sin tickets</span>
             </div>
 
             <h1 id="lbl-pending">{{pending}}</h1>
         </div>
-        <div>
+        <!-- <div>
             <button (click)="logOut()">Cerrar Sesion</button>
-        </div>
+        </div> -->
     </div>
 
         </div>

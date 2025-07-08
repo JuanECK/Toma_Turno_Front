@@ -22,37 +22,41 @@ export class PantallaEscritorio implements OnInit {
     deskLbl = document.getElementById('deskLbl')
     // noMoreAlert = document.getElementById('alert')
 
-    small: string = 'Nadie'
-    pending: string = 'Espere...'
-
+    small: string = 'CTN-1'
+    pending: string = ''
 
     // @ViewChild('currentTicketLbl') currentTicketLbl!: ElementRef;
     // @ViewChild('noMoreAlert') noMoreAlert!: ElementRef;
 
-    deskNumber = 'Escritorio 2';
+    deskNumber = 'Sin uso';
     workingTicket: any = null;
 
     receivedMessages: any[] = [];
     
 
     ngOnInit(): void {
+        const sesion = localStorage.getItem('sesion');
+        if (sesion !== null) {
+            let Data = JSON.parse(sesion)
+            this.deskNumber = 'Caja '+Data.caja
+        }
         //    this.connectToWebSockets()
-        // this.loadInitialCount()
+        this.loadInitialCount()
 
-        // this.webSocketService.connect('ws://localhost:3200/ws');
+        this.webSocketService.connect('ws://localhost:3200/ws');
 
-        // this.messageSubscription = this.webSocketService.messages$.subscribe(
-        //     (message) => {
-        //         // this.receivedMessages.push(message);
-        //         // console.log('Message received in component:', message);
-        //         const { type, payload } = JSON.parse(message)
-        //         if (type !== 'on-ticket-count-changed') return
-        //         this.checkTicketCount(payload)
-        //     },
-        //     (error) => {
-        //         console.error('Error receiving message:', error);
-        //     }
-        // );
+        this.messageSubscription = this.webSocketService.messages$.subscribe(
+            (message) => {
+                // this.receivedMessages.push(message);
+                // console.log('Message received in component:', message);
+                const { type, payload } = JSON.parse(message)
+                if (type !== 'on-ticket-count-changed') return
+                this.checkTicketCount(payload)
+            },
+            (error) => {
+                console.error('Error receiving message:', error);
+            }
+        );
     }
 
     checkTicketCount(currentCount = 0) {

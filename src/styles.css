@@ -18,10 +18,16 @@ body{
     --Semi-Bold:600;
     --Bold:800;
     --Extra-Bold:900;
-    --Obligatorio:#FF9900 ;
+    --AzulRey:#013b7e ;
 }
 ::-webkit-scrollbar {
     display: none;
+}
+.row{
+    display: flex;
+}
+.justyfy-between{
+    justify-content: space-between;
 }
 .card{
     
@@ -44,11 +50,14 @@ body{
     color: #ffffff;
     /* border: 1px solid #00B3CF; */
     border: none;
-    background-color: #00B3CF;
+    background-color: #013b7e;
     cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 5px;
 }
 .btn:hover{
-background-color: #0092a8;
+background-color: #013b7ecb;
+/* color: #a1a1a1; */
 }
 input[type="text"], input[type=number]{
     border: 1px solid #00B3CF;

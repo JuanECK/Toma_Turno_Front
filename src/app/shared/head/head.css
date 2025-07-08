@@ -21,8 +21,8 @@
 .logo {
     grid-area: logo;
     position: absolute;
-    margin: 5px 0 5px 10px;
-    width: 60px;
+    margin: 5px 0 5px 15px;
+    width: 50px;
     height: 59px;
     display: flex;
     justify-content: left;
@@ -152,8 +152,7 @@
     align-items: center;
 
     & img {
-
-        width: 80%;
+        width: 45px;
         border-radius: 50%;
     }
 }
