@@ -4,13 +4,13 @@
     <hr>
     <div class="row justyfy-between">
         <div class="col-8">
-            <h4 class="ticketNum">Atendiendo ticket <span>: {{small}}</span></h4>
+            <h4 class="ticketNum">Atendiendo Turno <span>: {{small}}</span></h4>
         
-            <button id="btn-draw" class="btn btn-primary btn-class " (click)="getTicket()">
-                Siguiente Ticket
+            <button id="btn-draw" [classList]="btnSiguienteTurno ? ' btn-class btn-Disabled': 'btn btn-class' " [disabled]="btnSiguienteTurno" (click)="getTicket()">
+                Siguiente Turno
             </button>
 
-            <button id="btn-done" class="btn btn-primary mt-5" (click)="finishTicked()">
+            <button id="btn-done" [classList]="!btnSiguienteTurno ? ' btn-class- btn-Disabled': 'btn btn-class-' " (click)="finishTicked()">
                 Terminar 
             </button>
         </div>
@@ -22,7 +22,7 @@
                 <span>Sin tickets</span>
             </div>
 
-            <h1 id="lbl-pending">{{pending}}</h1>
+            <h1 id="lbl-pending" class="lbl-pending">{{pending}}</h1>
         </div>
         <!-- <div>
             <button (click)="logOut()">Cerrar Sesion</button>

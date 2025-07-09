@@ -23,6 +23,21 @@ body{
 ::-webkit-scrollbar {
     display: none;
 }
+
+.btn-Disabled{
+    height: 28px;
+    font-size: 12px;
+    font-weight: var(--Normal);
+    color: #ffffff;
+    /* border: 1px solid #00B3CF; */
+    border: none;
+    background-color: #7a7a7a;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+
 .row{
     display: flex;
 }

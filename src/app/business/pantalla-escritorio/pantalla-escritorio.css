@@ -26,3 +26,9 @@
     margin: 8px 0;
     padding: 10px 0;
 }
+.lbl-pending{
+    color: var(--AzulRey);
+    text-align: center;
+    margin: 8px 0;
+    /* padding: 10px 0; */
+}

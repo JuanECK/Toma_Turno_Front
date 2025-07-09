@@ -34,7 +34,7 @@ export class AuthService {
     { nombreCajero: 'Jorge Alvarez', email: 'jorge@tornillo', password: '123', idCajero: 2, perfil: 2, caja:1 },
     { nombreCajero: 'Pedro Paramo', email: 'pedro@tornillo', password: '123', idCajero: 3, perfil: 2, caja:2 },
     { nombreCajero: 'pantalla', email: 'pantalla@tornillo', password: '123', idCajero: 4, perfil: 3, caja:0 },
-    { nombreCajero: 'ticketero', email: 'ticketero@tornillo', password: '123', idCajero: 5, perfil: 4, caja:0 },
+    { nombreCajero: 'turnero', email: 'turnero@tornillo', password: '123', idCajero: 5, perfil: 4, caja:0 },
   ]
 
 

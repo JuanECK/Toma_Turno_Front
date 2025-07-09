@@ -31,6 +31,8 @@ export class PantallaEscritorio implements OnInit {
     deskNumber = 'Sin uso';
     workingTicket: any = null;
 
+    btnSiguienteTurno:boolean = false;
+
     receivedMessages: any[] = [];
     
 
@@ -64,11 +66,12 @@ export class PantallaEscritorio implements OnInit {
         if (currentCount === 0) {
             console.log(1)
             document.getElementById('alert')?.classList.remove('d-none');
+            this.pending = ''
         } else {
             console.log(2)
             document.getElementById('alert')?.classList.add('d-none');
+            this.pending = currentCount.toString()
         }
-        this.pending = currentCount.toString()
     }
 
     async loadInitialCount() {
@@ -93,11 +96,13 @@ export class PantallaEscritorio implements OnInit {
             },
         }).then(resp => resp.json());
         if (status === 'error') {
+            console.log(message)
             this.small = message
             return
         }
         this.workingTicket = Ticket;
         this.small = Ticket.number
+        this.btnSiguienteTurno = true
     }
 
     async finishTicked() {
@@ -113,7 +118,8 @@ export class PantallaEscritorio implements OnInit {
         console.log({ status, message })
         if (status === 'ok') {
             this.workingTicket = null;
-            this.small = 'Nadie'
+            this.small = ''
+            this.btnSiguienteTurno = false
         }
     }
 

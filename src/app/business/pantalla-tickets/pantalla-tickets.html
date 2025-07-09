@@ -1,18 +1,45 @@
+<div class="container">
+    <div class="card-turno">
+        <div class="turnero">
+            <div class="headerTurno">
+                <button (click)="logOut()"> <img src="img/exit.png" alt=""><span>Finalizar la sesion</span> </button>
+            </div>
+            <div class="bodyTurno">
+                <div class="turnoNumber">
+                    <span id="lbl-new-ticket">CTN-{{currentTicket}}</span>
+                </div>
+                <div class="turnoNormal">
+                    <div>
+                        <button class="btn-Normal " (click)="createTicket()">
+                            Nuevo Turno
+                        </button>
+                    </div>
+                </div>
 
-    <table>
-        <tr>
-            <td>
-                <span id="lbl-new-ticket">{{currentTicket}}</span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="btn btn-secondary btn-lg" (click)="createTicket()">
-                    Generar nuevo ticket
-                </button>
-            </td>
-        </tr>
-    </table>
-         <div>
-            <button (click)="logOut()">Cerrar Sesion</button>
+                <div class="turnoEspecial">
+                    <p>Selecciona este Turno si tienes alguna capacidad difernte</p>
+                    <div>
+                        <button class="btn-Especial " (click)="createTicket()">
+                            Turno Especial
+                        </button>
+                    </div>
+                </div>
+
+                <!-- <table>
+                    <tr>
+                        <td>
+                            <span id="lbl-new-ticket">{{currentTicket}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="btn btn-secondary btn-lg" (click)="createTicket()">
+                                Generar nuevo ticket
+                            </button>
+                        </td>
+                    </tr>
+                </table> -->
+            </div>
         </div>
+    </div>
+</div>
