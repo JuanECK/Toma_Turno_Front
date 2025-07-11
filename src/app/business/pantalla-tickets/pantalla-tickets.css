@@ -117,14 +117,13 @@ height: 100%;
 
 }
 .atnExpecial{
-    margin: 0 20px;
+    width: 90%;
     border: 1px solid #013b7e;
 }
 .bodyTurno > .atnExpecial > .especial {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 100%; */
     & p{
         font-size: 20px;
         margin: 20px 26px 0 26px;
