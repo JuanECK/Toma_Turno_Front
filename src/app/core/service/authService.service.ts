@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { PuenteDataService } from "./puente-data.service";
+import { environment } from "../../../environments/environments.prod";
+
 
 interface perfilCajero {
   nombreCajero: string,
@@ -24,6 +26,8 @@ export class AuthService {
 
   }
 
+   private _http: string = `${environment.apiUrl}`;
+
   // perfil:1 = Administrador
   // perfil:2 = Cajero
   // perfil:3 = Pantalla
@@ -42,47 +46,45 @@ export class AuthService {
     try {
 
 
-      //   let dataCookie:boolean = true
-      //   const response = await  fetch(this._http +"auth/login", {
-      //     method: 'POST',
-      //     // mode:"cors",
-      //     credentials:"include",
-      //     headers: {
-      //         'Content-Type': 'application/json'
-      //     },
-      //     body: JSON.stringify({
-      //         Usuario: email,
-      //         Contrasenia: password,
-      //     })
-      //   })
-      //   const data = await response.json();
-      //   // console.log(data);
+        let dataCookie:boolean = true
+        const response = await  fetch(this._http +"auth/login", {
+          method: 'POST',
+          // mode:"cors",
+          credentials:"include",
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              Usuario: email,
+              Contrasenia: password,
+          })
+        })
+        const data = await response.json();
+        console.log(data);
 
-      //   if(response.status === 200){
-      //     dataCookie = true
-      //   }else{
-      //     dataCookie = false
-      //   }
+        // if(response.status === 200){
+        //   dataCookie = true
+        // }else{
+        //   dataCookie = false
+        // }
 
+        // return {
+        //   log:dataCookie,
+        //   data:data
+        // }
+
+
+
+      // const perfil = this.perfiles.filter(perfil => perfil.email == email)
+      // if (perfil.length < 1) return { log: false, data: { user: '' } }
+
+      // if (email == perfil[0].email && password == perfil[0].password) {
       //   return {
-      //     log:dataCookie,
-      //     data:data
+      //     log: true,
+      //     data: { user: email, perfil: perfil[0].perfil, nombre: perfil[0].nombreCajero, caja: perfil[0].caja }
       //   }
 
-
-
-      // console.log({email:email, password:password})
-      const perfil = this.perfiles.filter(perfil => perfil.email == email)
-      if (perfil.length < 1) return { log: false, data: { user: '' } }
-
-      // console.log(perfil)
-      if (email == perfil[0].email && password == perfil[0].password) {
-          // this.setDataLogin(perfil)
-        return {
-          log: true,
-          data: { user: email, perfil: perfil[0].perfil, nombre: perfil[0].nombreCajero, caja: perfil[0].caja }
-        }
-      }
+      // }
 
 
       return {
