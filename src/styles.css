@@ -44,6 +44,32 @@ body{
 .justyfy-between{
     justify-content: space-between;
 }
+
+Table{
+    /* background: #00B3CF; */
+    font-size: 12px;
+    width: 100%;
+
+    thead, tbody{
+        display: block;
+        border-collapse: collapse;
+    }
+
+    /* thead{
+        th{
+            color: #c5c5c5;
+        }
+    } */
+    tbody{
+
+        display: block;
+        /* height: 50px; */
+        overflow-y: auto;
+        overflow-x: hidden;
+
+    }
+}
+
 .card{
     
     padding: 16px 12px;

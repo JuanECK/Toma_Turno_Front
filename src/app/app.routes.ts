@@ -10,6 +10,7 @@ import { Layout } from './shared/layout/layout';
 import { PerfilSesionGuardianService } from './core/guardian/Perfil-Sesion-guardian.service';
 import { genericGuard } from './core/guardian/Generic-guardian.guard';
 import { perfilGuard } from './core/guardian/Perfil-guardian.guard';
+import { Usuarios } from './business/usuarios/usuarios';
 
 export const routes: Routes = [
     
@@ -20,6 +21,7 @@ export const routes: Routes = [
         children:[
             { path:'', redirectTo: 'admin', pathMatch: 'full' },
             { path:'admin', component:Inicio, canActivate:[perfilGuard],data:{roles:[1]}},
+            { path:'usuarios', component:Usuarios, canActivate:[perfilGuard],data:{roles:[1]}},
             { path:'desk/:id', component:PantallaEscritorio, canActivate:[perfilGuard],data:{roles:[2]}},
             // { path:'public', component:PantallaPublica, canActivate: [perfilGuard], data:{roles:[3]}},
             // { path:'tickets', component:PantallaTickets, canActivate: [perfilGuard], data:{roles:[4]}},

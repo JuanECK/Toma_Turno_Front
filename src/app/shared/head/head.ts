@@ -2,10 +2,11 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../core/service/authService.service';
 import { PuenteDataService } from '../../core/service/puente-data.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-head',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './head.html',
   styleUrl: './head.css'
 })

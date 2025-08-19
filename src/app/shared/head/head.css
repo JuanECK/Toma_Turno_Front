@@ -47,6 +47,10 @@
     justify-content: space-around;
 }
 
+.options > .pot > .aLink{
+    text-decoration: none;
+}
+
 .options>.perfilUsuario {
     background: #5a6361;
     margin: 0;
