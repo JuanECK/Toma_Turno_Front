@@ -57,25 +57,25 @@ export class Login implements OnInit {
 
         // this.router.navigate(['']);
 
-        switch (valor.data.perfil) {
-            case 1:
-              this.router.navigateByUrl('admin');
-              break
-              case 2:
-                this.router.navigateByUrl('desk/:id');
+        // switch (valor.data.perfil) {
+        //     case 1:
+        //       this.router.navigateByUrl('admin');
+        //       break
+        //       case 2:
+        //         this.router.navigateByUrl('desk/:id');
                 
-                break
-                case 3:
-                this.router.navigateByUrl('public');
+        //         break
+        //         case 3:
+        //         this.router.navigateByUrl('public');
                 
                 
-                break
-                case 4:
-                this.router.navigateByUrl('tickets');
+        //         break
+        //         case 4:
+        //         this.router.navigateByUrl('tickets');
 
-              break
+        //       break
               
-        }
+        // }
 
         return true;
       } else {

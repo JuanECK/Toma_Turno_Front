@@ -55,12 +55,12 @@ export class AuthService {
               'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-              Usuario: email,
+              usuario: email,
               Contrasenia: password,
           })
         })
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
 
         // if(response.status === 200){
         //   dataCookie = true
