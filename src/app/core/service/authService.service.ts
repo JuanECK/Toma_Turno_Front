@@ -46,7 +46,7 @@ export class AuthService {
     try {
 
 
-        let dataCookie:boolean = true
+        // let dataCookie:boolean = true
         const response = await  fetch(this._http +"auth/login", {
           method: 'POST',
           // mode:"cors",
@@ -60,18 +60,23 @@ export class AuthService {
           })
         })
         const data = await response.json();
-        // console.log(data);
+        console.log(data);
 
-        // if(response.status === 200){
-        //   dataCookie = true
-        // }else{
-        //   dataCookie = false
-        // }
+        if(data.status === 200){
 
-        // return {
-        //   log:dataCookie,
-        //   data:data
-        // }
+          return {
+            log:true,
+            data:data
+          }
+          
+        }else{
+          
+          return {
+            log:false,
+            data:data
+          }
+        }
+
 
 
 
@@ -87,10 +92,10 @@ export class AuthService {
       // }
 
 
-      return {
-        log: false,
-        data: { user: '' }
-      }
+      // return {
+      //   log: false,
+      //   data: { user: '' }
+      // }
 
 
     } catch (error) {
