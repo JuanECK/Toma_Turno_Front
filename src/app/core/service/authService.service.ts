@@ -61,19 +61,19 @@ export class AuthService {
         })
         const data = await response.json();
         console.log(data);
+        const { status, ...userData } = data
 
         if(data.status === 200){
-
           return {
             log:true,
-            data:data
+            data:userData
           }
           
         }else{
           
           return {
             log:false,
-            data:data
+            data:userData
           }
         }
 
@@ -137,17 +137,26 @@ export class AuthService {
     let arr = [{id:1,r:'admin'},{id:2,r:'desk/:id'},{id:3,r:'public'},{id:4,r:'tickets'}]
 
     const sesion = localStorage.getItem('sesion');
-    if (sesion !== null) {
-      let Data = JSON.parse(sesion)
-      // console.log(arr)
-      let oldLink = arr.filter(old => Data.perfil == old.id)
+    console.log(sesion)
 
-      if(Data.perfil == roles[0]){
-        // console.log( Data.perfil, '-', oldLink[0].r)
-        dataCookie = { dataCookie: true, sesion: oldLink[0].r }
-      }else{
-        dataCookie = { dataCookie: false, sesion: oldLink[0].r }
-      }
+    if (sesion == null) {
+
+      dataCookie = { dataCookie: false, sesion: null }
+      return
+
+    }
+    console.log('sesion')
+    let Data = JSON.parse(sesion!)
+    // console.log(arr)
+    let oldLink = arr.filter(old => Data.data.id_rol == old.id)
+
+    if(Data.data.id_rol == roles[0]){
+      // console.log( Data.perfil, '-', oldLink[0].r)
+      console.log(oldLink[0].r)
+      dataCookie = { dataCookie: true, sesion: oldLink[0].r }
+    }else{
+      console.log(oldLink[0].r)
+      dataCookie = { dataCookie: false, sesion: oldLink[0].r }
     }
 
 

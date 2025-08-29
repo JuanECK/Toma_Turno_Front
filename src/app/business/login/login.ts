@@ -44,6 +44,8 @@ export class Login implements OnInit {
     return this.AuthService.login(usuario, contrasenia).then(valor => {
       
       this.usuarioRetorno = valor.log
+
+      console.log(this.usuarioRetorno)
       if (this.usuarioRetorno) {
         // console.log("COMPROBAMOS-USUARIO: " + this.usuarioRetorno);
         // const { Clave_Usuario, Usuario, ...UsuarioData } = valor.data.user
@@ -55,27 +57,27 @@ export class Login implements OnInit {
         // const { Nombre_Completo, ...UsuarioD} = UsuarioData 
         // this.emitDataLogin.disparadorLogin.emit(UsuarioD)
 
-        // this.router.navigate(['']);
+        this.router.navigate(['']);
 
-        // switch (valor.data.perfil) {
-        //     case 1:
-        //       this.router.navigateByUrl('admin');
-        //       break
-        //       case 2:
-        //         this.router.navigateByUrl('desk/:id');
+        switch (valor.data.rol) {
+            case 1:
+              this.router.navigateByUrl('admin');
+              break
+              case 2:
+                this.router.navigateByUrl('desk/:id');
                 
-        //         break
-        //         case 3:
-        //         this.router.navigateByUrl('public');
+                break
+                case 3:
+                this.router.navigateByUrl('public');
                 
                 
-        //         break
-        //         case 4:
-        //         this.router.navigateByUrl('tickets');
+                break
+                case 4:
+                this.router.navigateByUrl('tickets');
 
-        //       break
+              break
               
-        // }
+        }
 
         return true;
       } else {
